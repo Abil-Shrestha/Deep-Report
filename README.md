@@ -1,69 +1,96 @@
-# STORM Algorithm Implementation
+# Storm
 
-This is a Python implementation of the STORM (Self-reflective Tuning through Outline-assisted Retrieval Method) algorithm. The algorithm generates comprehensive outlines and references for a given topic by discovering multiple perspectives and simulating conversations.
+A modern, full-stack Next.js application designed with performance, security, and maintainability as core principles. Built with TypeScript, React, and Next.js using the latest best practices in UI/UX with Tailwind CSS and Shadcn UI.
 
 ## Features
 
-- Topic-based perspective discovery
-- Wikipedia article retrieval and parsing
-- Question-answer simulation using transformers
-- Outline generation and refinement
-- Reference tracking
+- **Modern Architecture**: Utilizes Next.js SSR and React Server Components for optimal performance.
+- **TypeScript**: Strict type safety for robust code.
+- **Optimized UI/UX**: Responsive design with Tailwind CSS and modern components.
+- **Efficient State Management**: Leverages modern solutions like Zustand or TanStack React Query.
+- **Optimized Images**: Utilizes WebP image format, lazy loading, and responsive design.
+- **Security & Error Handling**: Robust error boundaries and custom validations with Zod.
 
-## Installation
+## Technology Stack
 
-1. Create a virtual environment:
-```bash
-python -m venv venv
-source venv/bin/activate  # On Unix/macOS
-```
+- **Frontend**: Next.js (React, SSR, RSC), Tailwind CSS, Shadcn UI
+- **Backend**: API routes in Next.js with server-side logic
+- **State Management**: Zustand / TanStack React Query 
+- **Validation**: Zod
+- **Package Manager**: Bun
+
+## Getting Started
+
+### Prerequisites
+
+- Bun package manager
+- Node.js (if applicable for tooling)
+
+### Installation
+
+1. Clone the repository:
+    ```bash
+    git clone <repository-url>
+    cd storm
+    ```
 
 2. Install dependencies:
+    ```bash
+    bun install
+    ```
+
+### Development
+
+Start the development server:
+
 ```bash
-pip install -r requirements.txt
+bun run dev
 ```
 
-## Usage
+Visit `http://localhost:3000` to view the application.
 
-```python
-from storm import STORM
+### Production
 
-# Initialize STORM with your API key
-storm = STORM(api_key="your-api-key")
+To build the application for production:
 
-# Run the algorithm on a topic
-outline, references = storm.run(
-    topic="artificial intelligence",
-    max_perspectives=3,
-    max_rounds=2
-)
-
-# Print results
-print("Outline:")
-for point in outline:
-    print(f"- {point}")
-
-print("\nReferences:")
-for ref in references:
-    print(f"- {ref}")
+```bash
+bun run build
 ```
 
-## Components
+And to start the production server:
 
-- `Perspective`: Dataclass for storing perspective information
-- `Conversation`: Dataclass for storing conversation history
-- `STORM`: Main class implementing the algorithm
-  - `gen_related_topics`: Generate related topics
-  - `get_wiki_article`: Fetch Wikipedia articles
-  - `extract_toc`: Extract table of contents
-  - `gen_perspectives`: Generate perspectives
-  - `gen_qn`: Generate questions
-  - `gen_queries`: Generate search queries
-  - `search_and_sift`: Search and filter sources
-  - `gen_ans`: Generate answers
-  - `direct_gen_outline`: Generate initial outline
-  - `refine_outline`: Refine outline based on conversations
+```bash
+bun run start
+```
 
-## Note
+## Project Structure
 
-This implementation includes placeholder functions for certain components (e.g., knowledge graph queries, search API) that would need to be replaced with actual implementations in a production environment.
+```
+/storm
+  ├── components/          # Reusable React components
+  ├── pages/               # Next.js pages and API routes
+  ├── styles/              # Global and component-specific styles
+  ├── public/              # Static files and assets
+  ├── lib/                 # Utility functions and helpers
+  ├── types/               # TypeScript types and interfaces
+  └── README.md            # Project documentation
+```
+
+## Best Practices and Optimization
+
+- **Performance**: Use dynamic imports and code splitting.
+- **Error Handling**: Handle edge cases with early returns and custom error types.
+- **Security**: Validate inputs and ensure secure API routes.
+- **Maintainability**: Maintain a clear, modular directory structure with concise, technical documentation.
+
+## Contributing
+
+Contributions are welcome! Please follow best practices for code quality, testing, and documentation when submitting pull requests.
+
+## License
+
+[MIT License](./LICENSE)
+
+---
+
+_Last updated: February 14, 2025_
