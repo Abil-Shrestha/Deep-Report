@@ -1,96 +1,57 @@
-# Storm
+# STORM: Structured Topic Organization and Research Method
 
-A modern, full-stack Next.js application designed with performance, security, and maintainability as core principles. Built with TypeScript, React, and Next.js using the latest best practices in UI/UX with Tailwind CSS and Shadcn UI.
+> Implementation of the STORM algorithm described in ["Assisting in Writing Wikipedia-like Articles From Scratch with Large Language Models"](https://arxiv.org/abs/2402.14207) (arXiv, 2024)
 
-## Features
+STORM is an advanced Python-based algorithm that implements a sophisticated approach to web research and content analysis. It combines multiple AI models and search APIs to generate comprehensive, well-structured research outlines with source attribution, following the methodology outlined in the research paper.
 
-- **Modern Architecture**: Utilizes Next.js SSR and React Server Components for optimal performance.
-- **TypeScript**: Strict type safety for robust code.
-- **Optimized UI/UX**: Responsive design with Tailwind CSS and modern components.
-- **Efficient State Management**: Leverages modern solutions like Zustand or TanStack React Query.
-- **Optimized Images**: Utilizes WebP image format, lazy loading, and responsive design.
-- **Security & Error Handling**: Robust error boundaries and custom validations with Zod.
+## 🎯 Overview
 
-## Technology Stack
+STORM helps researchers and content creators by:
+1. Generating related topics for deeper exploration
+2. Performing intelligent web searches
+3. Analyzing and structuring content
+4. Creating detailed outlines with source attribution
+5. Managing research conversations and perspectives
 
-- **Frontend**: Next.js (React, SSR, RSC), Tailwind CSS, Shadcn UI
-- **Backend**: API routes in Next.js with server-side logic
-- **State Management**: Zustand / TanStack React Query 
-- **Validation**: Zod
-- **Package Manager**: Bun
+## 🗺️ Roadmap
 
-## Getting Started
+### Phase 1: Core Implementation - [View Source](storm.py#L27-L40)
+- [x] Initialize with Gemini and Exa API clients
+- [x] Environment variable configuration
+- [x] Basic error handling and validation
 
-### Prerequisites
+### Phase 2: Topic Generation - [View Source](storm.py#L42-L84)
+- [x] Related topic generation using Gemini
+- [x] Topic relevance scoring
+- [x] Intelligent topic filtering
 
-- Bun package manager
-- Node.js (if applicable for tooling)
+### Phase 3: Content Gathering - [View Source](storm.py#L86-L165)
+- [x] Wikipedia article fetching
+- [x] Web search implementation with Exa
+- [x] Content extraction and cleaning
 
-### Installation
+### Phase 4: Analysis & Structure - [View Source](storm.py#L167-L220)
+- [x] Content re-ranking
+- [x] Structure extraction
+- [x] Topic organization
 
-1. Clone the repository:
-    ```bash
-    git clone <repository-url>
-    cd storm
-    ```
+### Phase 5: Future Enhancements
+- [ ] Implement additional search providers
+- [ ] Add support for academic papers
+- [ ] Enhance outline generation
+- [ ] Improve source validation
 
-2. Install dependencies:
-    ```bash
-    bun install
-    ```
+## 🛠️ Technology Stack
 
-### Development
+- **AI Models**: Google Gemini Pro
+- **Search APIs**: Exa Search API
+- **Content Processing**: BeautifulSoup4, NLTK
+- **Environment**: Python 3.x with type hints
 
-Start the development server:
+## 📋 Prerequisites
 
-```bash
-bun run dev
-```
+- Python 3.8+
+- API Keys:
+  - GEMINI_LLM_KEY
+  - EXA_API_KEY
 
-Visit `http://localhost:3000` to view the application.
-
-### Production
-
-To build the application for production:
-
-```bash
-bun run build
-```
-
-And to start the production server:
-
-```bash
-bun run start
-```
-
-## Project Structure
-
-```
-/storm
-  ├── components/          # Reusable React components
-  ├── pages/               # Next.js pages and API routes
-  ├── styles/              # Global and component-specific styles
-  ├── public/              # Static files and assets
-  ├── lib/                 # Utility functions and helpers
-  ├── types/               # TypeScript types and interfaces
-  └── README.md            # Project documentation
-```
-
-## Best Practices and Optimization
-
-- **Performance**: Use dynamic imports and code splitting.
-- **Error Handling**: Handle edge cases with early returns and custom error types.
-- **Security**: Validate inputs and ensure secure API routes.
-- **Maintainability**: Maintain a clear, modular directory structure with concise, technical documentation.
-
-## Contributing
-
-Contributions are welcome! Please follow best practices for code quality, testing, and documentation when submitting pull requests.
-
-## License
-
-[MIT License](./LICENSE)
-
----
-
-_Last updated: February 14, 2025_
