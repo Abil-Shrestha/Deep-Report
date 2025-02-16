@@ -1,57 +1,73 @@
-# STORM: Structured Topic Organization and Research Method
+# STORM: Structured Topic-Oriented Research Machine
 
-> Implementation of the STORM algorithm described in ["Assisting in Writing Wikipedia-like Articles From Scratch with Large Language Models"](https://arxiv.org/abs/2402.14207) (arXiv, 2024)
+STORM is a comprehensive research pipeline designed to automate the process of generating detailed research reports on any given topic. It leverages advanced AI models to plan, conduct, analyze, synthesize, and validate research, producing a structured report in markdown format.
 
-STORM is an advanced Python-based algorithm that implements a sophisticated approach to web research and content analysis. It combines multiple AI models and search APIs to generate comprehensive, well-structured research outlines with source attribution, following the methodology outlined in the research paper.
+## Features
 
-## 🎯 Overview
+- **Automated Research Planning**: Generates a research plan with objectives, questions, methodology, and sources.
+- **Web-Based Research**: Conducts web searches to gather relevant information and sources.
+- **In-Depth Analysis**: Analyzes findings to identify key points, evidence, and implications.
+- **Coherent Synthesis**: Synthesizes analysis results into a structured narrative.
+- **Validation**: Validates the synthesized findings for accuracy and consistency.
+- **Comprehensive Reporting**: Generates a markdown report with sections like Abstract, Introduction, Literature Review, Methodology, Results, Discussion, Conclusion, References, and Appendices.
 
-STORM helps researchers and content creators by:
-1. Generating related topics for deeper exploration
-2. Performing intelligent web searches
-3. Analyzing and structuring content
-4. Creating detailed outlines with source attribution
-5. Managing research conversations and perspectives
+## Installation
 
-## 🗺️ Roadmap
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/yourusername/storm.git
+   cd storm
+   ```
 
-### Phase 1: Core Implementation - [View Source](storm.py#L27-L40)
-- [x] Initialize with Gemini and Exa API clients
-- [x] Environment variable configuration
-- [x] Basic error handling and validation
+2. **Set Up Environment**:
+   Ensure you have Python 3.8+ installed. Create a virtual environment and activate it:
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+   ```
 
-### Phase 2: Topic Generation - [View Source](storm.py#L42-L84)
-- [x] Related topic generation using Gemini
-- [x] Topic relevance scoring
-- [x] Intelligent topic filtering
+3. **Install Dependencies**:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-### Phase 3: Content Gathering - [View Source](storm.py#L86-L165)
-- [x] Wikipedia article fetching
-- [x] Web search implementation with Exa
-- [x] Content extraction and cleaning
+4. **Configure API Keys**:
+   Create a `.env` file in the root directory and add your API keys:
+   ```
+   GEMINI_LLM_KEY=your_gemini_api_key
+   EXA_API_KEY=your_exa_api_key
+   ```
 
-### Phase 4: Analysis & Structure - [View Source](storm.py#L167-L220)
-- [x] Content re-ranking
-- [x] Structure extraction
-- [x] Topic organization
+## Usage
 
-### Phase 5: Future Enhancements
-- [ ] Implement additional search providers
-- [ ] Add support for academic papers
-- [ ] Enhance outline generation
-- [ ] Improve source validation
+1. **Run the STORM Pipeline**:
+   Execute the main script to start the research process:
+   ```bash
+   python main.py
+   ```
 
-## 🛠️ Technology Stack
+2. **Enter Research Topic**:
+   When prompted, enter the topic you wish to research.
 
-- **AI Models**: Google Gemini Pro
-- **Search APIs**: Exa Search API
-- **Content Processing**: BeautifulSoup4, NLTK
-- **Environment**: Python 3.x with type hints
+3. **View and Save Report**:
+   After the pipeline completes, view the report summary in the console. You will be prompted to save the full report in markdown format.
 
-## 📋 Prerequisites
+## Report Structure
 
-- Python 3.8+
-- API Keys:
-  - GEMINI_LLM_KEY
-  - EXA_API_KEY
+The generated report includes the following sections:
+
+- **Title Page**: Title of the report.
+- **Abstract**: A concise summary of the research.
+- **Introduction**: Background, research problem, objectives, and methodology overview.
+- **Literature Review**: Summary and analysis of existing research.
+- **Methodology**: Detailed description of research design and methods.
+- **Results**: Presentation of findings with supporting evidence.
+- **Discussion**: Interpretation of results and implications.
+- **Conclusion**: Summary of key findings, limitations, and recommendations.
+- **References**: List of all sources cited.
+- **Appendices**: Supplementary material.
+
+## Logging
+
+All operations and errors are logged to `storm_research.log` for debugging and review.
 
